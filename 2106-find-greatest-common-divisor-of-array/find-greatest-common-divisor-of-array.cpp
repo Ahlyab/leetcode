@@ -13,8 +13,6 @@ public:
             }
         }
 
-        cout << small << " : " << large << endl;
-
         return gcd(small, large);
     }
 };
