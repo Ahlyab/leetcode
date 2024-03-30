@@ -5,16 +5,18 @@ public:
         // for(int i=0; i<words.size(); ++i) {
         //     res += words[i][0];
         // }
-        if(s.size() != words.size()) {
+        int ws = words.size();
+        int ss = s.size();
+        if(ss != ws) {
             return false;
         }
         int i=0;
-        for(; i<s.size(); ++i) {
+        for(; i<ss; ++i) {
             if(s[i] != words[i][0]) {
                 return false;
             }
         }
 
-        return i == words.size();
+        return i == ws;
     }
 };
