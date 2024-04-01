@@ -1,33 +1,30 @@
 class Solution {
 public:
     int thirdMax(vector<int>& nums) {
-        
-
-        set<int> numbers (nums.begin(), nums.end());
-
-        for(int n : numbers) {
-            cout << n << " ";
+        int n=nums.size();
+        sort(nums.begin(),nums.end());
+        if(n==1)
+        {
+            return nums[0];
         }
-
-        if(numbers.size() < 3) {
-            int i=0;
-            for(int n : numbers) {
-                if(i==numbers.size()-1) {
-                    return n;
+        else
+        {   
+            int thirdmaxi;
+            int count=0;
+            for(int i=n-1; i>=1; i--)
+            {
+                if(nums[i]>nums[i-1])
+                {
+                    count++;
+                if(count==2)
+                {
+                    thirdmaxi=nums[i-1];
+                    return thirdmaxi;
                 }
-                ++i;
+                }
             }
-        }
-
-        int i = 0;
-        int t = numbers.size() - 3;
-
-        for(int n : numbers) {
-            if(i == t) {
-                return n;
-            }
-            ++i;
-        }
-        return 0;
+            
+        } 
+        return nums[n-1];
     }
 };
