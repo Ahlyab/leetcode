@@ -10,15 +10,11 @@ public:
             //     return i;
             // }
             if(n < 0) {
-                cout << i-2 << endl;
                 return i-2;
-            }else if(n==0){ 
-                cout << "value of i" <<  i << endl;
+            }else if(n==0){
                 return i-1;
             }
-
             n -= i;
-
         }
         return 1;
     }
