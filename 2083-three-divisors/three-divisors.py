@@ -1,5 +1,5 @@
 class Solution:
-    def isThree(self, n: int) -> bool:
+    def isThree(self, n):
         counter = 2
         half = int(n/2)
         for i in range(2, half+1):
