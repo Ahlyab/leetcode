@@ -4,13 +4,12 @@ public:
         // vector<int> res;
 
         int s = 0;
+        int result = 0;
         int e = numbers.size()-1;
 
         while(s < e) {
-            int result = numbers[s] + numbers[e];
+            result = numbers[s] + numbers[e];
             if(result == target) {
-                // res.push_back(s + 1);
-                // res.push_back(e + 1);
                 return vector<int>{s+1, e+1};
                 break;
             }else if( result > target) {
