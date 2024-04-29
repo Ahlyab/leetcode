@@ -2,7 +2,6 @@ class Solution {
 public:
     int sumFourDivisors(vector<int>& nums) {
         int res = 0;
-        vector<int> divisors;
         for(int i=0; i<nums.size(); ++i) {
             if(nums[i] >= 6) {
                 res += getDivisors(nums[i]);
@@ -12,25 +11,26 @@ public:
     }
 
     int getDivisors(const int &num) {
-        vector<int> res = {1, num};
         int count = 2;
-        int result = 0;
+        int result = 1 + num; // 1 and num are always divisors
 
-        for(int i=2; i<=num/2; ++i) {
+        for(int i=2; i*i<=num; ++i) {
             if(num%i == 0) {
-                ++count;
-                res.push_back(i);
-            }
+                if(i*i == num) { // num is a perfect square
+                    result += i;
+                    ++count;
+                } else { // num has two distinct divisors i and num/i
+                    result += i + num/i;
+                    count += 2;
+                }
 
-            if(count > 4) {
-                break;
+                if(count > 4) {
+                    return 0; // Early exit if more than 4 divisors found
+                }
             }
         }
 
-        if(res.size() == 4) {
-            for(int i=0; i<4; ++i) {
-                result += res[i];
-            }
+        if(count == 4) {
             return result;
         }
 
