@@ -4,10 +4,12 @@ public:
         int res = 0;
         vector<int> divisors;
         for(int i=0; i<nums.size(); ++i) {
-            divisors = getDivisors(nums[i]);
+            // if(nums[i] >= 6) {
+                divisors = getDivisors(nums[i]);
+            // }
 
             if(divisors.size() == 4) {
-                for(int j=0; j<divisors.size(); ++j) {
+                for(int j=0; j<4; ++j) {
                     res += divisors[j];
                 }
             }
