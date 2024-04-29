@@ -5,22 +5,16 @@ public:
         vector<int> divisors;
         for(int i=0; i<nums.size(); ++i) {
             if(nums[i] >= 6) {
-                divisors = getDivisors(nums[i]);
-            }
-
-            if(divisors.size() == 4) {
-                for(int j=0; j<4; ++j) {
-                    res += divisors[j];
-                }
-                divisors.clear();
+                res += getDivisors(nums[i]);
             }
         }
         return res;
     }
 
-    vector<int> getDivisors(const int &num) {
+    int getDivisors(const int &num) {
         vector<int> res = {1, num};
         int count = 2;
+        int result = 0;
 
         for(int i=2; i<=num/2; ++i) {
             if(num%i == 0) {
@@ -33,6 +27,13 @@ public:
             }
         }
 
-        return res;
+        if(res.size() == 4) {
+            for(int i=0; i<4; ++i) {
+                result += res[i];
+            }
+            return result;
+        }
+
+        return 0;
     }
 };
