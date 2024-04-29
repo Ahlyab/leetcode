@@ -2,8 +2,9 @@ class Solution {
 public:
     int sumFourDivisors(vector<int>& nums) {
         int res = 0;
+        vector<int> divisors;
         for(int i=0; i<nums.size(); ++i) {
-            vector<int> divisors = getDivisors(nums[i]);
+            divisors = getDivisors(nums[i]);
 
             if(divisors.size() == 4) {
                 for(int j=0; j<divisors.size(); ++j) {
