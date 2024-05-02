@@ -2,26 +2,22 @@
 class Solution {
 public:
     int findMaxK(vector<int>& nums) {
-        map<int, int> n;
+        sort(nums.begin(), nums.end());
 
-        for(int i=0; i<nums.size(); ++i) {
-            if(doesNegativeExist(nums, nums[i])) {
-                n.insert(pair<int, int>(abs(nums[i]), nums[i]*(-1)));
+        int i=0, j=nums.size()-1;
+
+        while(i != j) {
+            if(nums[i] == (nums[j] * -1)) {
+                return nums[j];
+            }else if(nums[i]*-1 > nums[j]) {
+                ++i;
+            }else{
+                --j;
             }
         }
 
-        return n.size() == 0? -1 : (--n.end())->first;
+        return -1;
     }
 
-    bool doesNegativeExist(vector<int>& nums, int num) {
-        num = num * -1;
-        
-        for(int i=0; i<nums.size(); ++i) {
-            if(nums[i] == num){
-                return true;
-            }
-        }
-
-        return false;
-    }
+    
 };
