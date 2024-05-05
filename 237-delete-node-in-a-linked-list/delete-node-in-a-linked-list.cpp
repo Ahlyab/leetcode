@@ -13,7 +13,6 @@ public:
 
         while(next->next) {
             node->val = next->val;
-            cout << node->val << endl;
             node->next = next;
             node = next;
             next = next->next;
