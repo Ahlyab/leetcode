@@ -20,19 +20,4 @@ public:
         dfs(0);
         return res;
     }
-
-    void dfs(vector<int>&nums, int i, vector<vector<int>> &subset, vector<vector<int>> res) {
-        if(i >= nums.size()) {
-            res.clear();
-            res = subset;
-            return;
-        }
-
-        subset[i].push_back(nums[i]);
-        dfs(nums, i+1, subset, res);
-        
-        subset[i].pop_back();
-        dfs(nums, i+1, subset, res);
-
-    }
 };
