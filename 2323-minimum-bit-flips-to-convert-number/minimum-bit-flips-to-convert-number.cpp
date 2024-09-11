@@ -15,9 +15,6 @@ public:
             s_target = 32;
         }
 
-        cout << i_start << " : " << s_target << endl;
-        cout << s << " : " << target << endl;
-
         for(int i=min(i_start, s_target); i < s.size(); ++i) {
             if(s[i] != target[i]) {
                 ++count;
