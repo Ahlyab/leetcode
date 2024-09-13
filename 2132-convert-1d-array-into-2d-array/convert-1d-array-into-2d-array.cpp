@@ -10,7 +10,6 @@ public:
 
         for(int j=0; j<m; ++j) {
             for(int k=0; k<n; ++k) {
-                cout << j << " : " << k << endl;
                 res[j][k] = original[i];
                 ++i;
             }
