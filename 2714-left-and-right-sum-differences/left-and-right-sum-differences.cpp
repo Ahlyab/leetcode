@@ -6,7 +6,6 @@ public:
         for(int i=0; i<nums.size(); ++i) {
             int leftTemp = sumLeft(i, nums);
             int rightTemp = sumRight(i, nums);
-            cout << leftTemp << " | " << rightTemp << endl;
             result.push_back(abs(leftTemp - rightTemp));
         }
 
