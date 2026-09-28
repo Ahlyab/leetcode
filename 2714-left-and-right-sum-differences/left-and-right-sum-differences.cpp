@@ -4,9 +4,7 @@ public:
         vector<int> result;
 
         for(int i=0; i<nums.size(); ++i) {
-            int leftTemp = sumLeft(i, nums);
-            int rightTemp = sumRight(i, nums);
-            result.push_back(abs(leftTemp - rightTemp));
+            result.push_back(abs(sumLeft(i, nums) - sumRight(i, nums)));
         }
 
         return result;
