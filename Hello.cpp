@@ -5,4 +5,5 @@ int main()
 {
     // comment
     cout << "Hello,WOrld!" << endl;
+    return 0;
 }
