@@ -22,7 +22,6 @@ var mergeNodes = function(head) {
         head = head.next;
     }
 
-    console.log(result);
     let finalResult = new ListNode(result[1]);
     let temp = finalResult;
 
