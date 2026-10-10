@@ -7,7 +7,6 @@ var maxFreqSum = function(s) {
     let consonants = {};
 
     for(let i=0; i<s.length; ++i) {
-        console.log(s[i], isVowel(s[i]))
        if (isVowel(s[i])) {
             vowels[s[i]] = (vowels[s[i]] || 0) + 1;
         } else {
@@ -15,7 +14,6 @@ var maxFreqSum = function(s) {
         }
     }
 
-    console.log(vowels, consonants);
 
     return Math.max(0,...Object.values(vowels)) + Math.max(0,...Object.values(consonants));
 };
